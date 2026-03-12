@@ -219,11 +219,11 @@
                 const timestamp = new Date().getTime();
                 try {
                     const [countriesRes, globalRes, factoriesRes, portsRes, routesRes] = await Promise.all([
-                        fetch('./countries.json?v=' + timestamp),
-                        fetch('./global.json?v=' + timestamp),
-                        fetch('./factories.json?v=' + timestamp),
-                        fetch('./ports.json?v=' + timestamp),
-                        fetch('./routes.json?v=' + timestamp)
+                        fetch('./data/countries.json?v=' + timestamp),
+                        fetch('./data/global.json?v=' + timestamp),
+                        fetch('./data/factories.json?v=' + timestamp),
+                        fetch('./data/ports.json?v=' + timestamp),
+                        fetch('./data/routes.json?v=' + timestamp)
                     ]);
 
                     if (countriesRes.ok) Object.assign(CoffeeData, await countriesRes.json());
